@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KELDEN Timetable Manager</title>
+<link rel="stylesheet" href="kelden.css">
+
+</head>
+<body>
+
+                              <!-- Header + Navbar -->
+<header>
+    <h1>KELDEN Timetable Manager</h1>
+    <nav>
+        <button onclick="window.location.href='login.html'">Se connecter</button>
+        <button id="settingsBtn">Paramètres</button>
+    </nav>
+</header>
+
+                                <!-- Main Content -->
+<main>
+    <div class="welcome">
+        <h2>Bienvenue sur KELDEN Timetable Manager</h2>
+        <p>Consultez et gérez vos emplois du temps de manière centralisée, moderne et bilingue.</p>
+    </div>
+
+    <div class="roles">
+        <div class="role-card">
+            <h3>Étudiants</h3>
+            <p>Consultez votre emploi du temps par niveau, filière ou enseignant.</p>
+            <div class="presentation"><img src="images/etudiant.jpg" alt="etudiant"></div>
+            <button onclick="window.location.href='timetable.html'">Voir Mon Emploi du Temps</button>
+        </div>
+
+        <div class="role-card">
+            <h3>Professeurs</h3>
+            <p>Visualisez vos cours et recevez les notifications des changements.</p>
+            <div class="presentation"><img src="images/chapeau.jpg" alt="professeur"></div>
+            <button onclick="window.location.href='timetable.html'">Voir Mon Emploi du Temps</button>
+        </div>
+    </div>
+</main>
+
+                              <!--la section -->
+                              
+ <section class="section intro">
+  <h2>📘 Kelden Horizon</h2>
+  <p class="desc">Un système moderne pour organiser le temps, les cours, les examens et la vie administrative.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">🗓️</div>
+      <h3>Gestion des Emplois du Temps</h3>
+      <p>Création, modification et visualisation interactive des horaires.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📚</div>
+      <h3>Suivi Académique</h3>
+      <p>Modules, devoirs, notes et progression consolidée.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚙️</div>
+      <h3>Administration Simplifiée</h3>
+      <p>Inscriptions, documents, notifications, communication interne.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section campuses">
+  <h2>🏫 Campus Connectés</h2>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <h3>Yaoundé</h3>
+      <p>Centre académique principal avec salles numériques et laboratoires.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <h3>Douala</h3>
+      <p>Espace d’innovation, workshops, et accompagnement professionnel.</p>
+    </div>
+  </div>
+
+  <div class="contact">
+    📞 +237 651 98 53 08 • 📧 keldeninstitute21@gmail.com
+  </div>
+</section>
+
+<section class="section reputation">
+  <h2>⭐ Excellence Académique</h2>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">🎓</div>
+      <h3>Diplômes</h3>
+      <p>HND, Licence, Master, MBA délivrés par des experts du secteur.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>Partenariats</h3>
+      <p>NCUK, Google for Education, collaborations universitaires africaines.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Performance</h3>
+      <p>Reconnue parmi les meilleures institutions professionnelles en 2025.</p>
+    </div>
+  </div>
+</section>
+
+
+
+                               <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <h2>Campus Planner</h2>
+    <p>Gestion du Temps & Organisation Universitaire</p>
+    <p class="tagline">Planifiez mieux. Étudiez mieux.</p>
+  </div>
+
+  <div class="footer-columns">
+    <div class="footer-column">
+      <h3>Fonctionnalités</h3>
+      <ul>
+        <li>Emploi du Temps</li>
+        <li>Suivi des Cours</li>
+        <li>Notifications & Rappels</li>
+        <li>Gestion des Salles</li>
+        <li>Calendrier Académique</li>
+        <li>Accès Enseignants</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Ressources</h3>
+      <ul>
+        <li>Aide & Support</li>
+        <li>FAQ Étudiants</li>
+        <li>Documentation</li>
+        <li>Actualités du Campus</li>
+        <li>Règlements</li>
+        <li>Contact Administration</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Newsletter</h3>
+      <p>Recevez les mises à jour académiques directement par email.</p>
+      <form id="subscribe-form">
+        <input type="email" placeholder="Votre Email" required />
+        <button type="submit">→</button>
+      </form>
+      <p id="subscribe-message"></p>
+    </div>
+  </div>
+</footer>
+</footer>
+
+<script>
+// -------------------- FORMULAIRE NEWSLETTER --------------------
+document.getElementById('subscribe-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const email = this.querySelector('input').value;
+  const message = document.getElementById('subscribe-message');
+
+  if (email) {
+    message.textContent = "Inscription réussie !";
+    this.reset();
+  } else {
+    message.textContent = "Veuillez entrer un email valide.";
+  }
+});
+</script>
+
+
+<!-- ========================== PANEL PARAMETRES ========================== -->
+
+<div id="settingsPanel">
+    <button id="closeSettings">Fermer Paramètres</button>
+
+    <!-- SECTION COMPTE -->
+    <div class="settings-section">
+        <h3>Compte</h3>
+
+        <div class="profile-photo-container">
+            <img id="profilePhoto" src="images/default-profile.jpg" alt="Photo de profil">
+            <input type="file" id="photo" accept="image/*" onchange="previewPhoto(event)">
+        </div>
+
+        <label for="username">Nom d’utilisateur</label>
+        <input type="text" id="username" placeholder="Votre nom">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="email@kelden.com">
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="********">
+    </div>
+
+    <!-- SECTION LANGUE -->
+   <!-- SECTION LANGUE -->
+<div class="settings-section">
+    <h3>Langue</h3>
+    <label for="language">Sélectionnez la langue</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+    </select>
+</div>
+
+    <!-- SECTION AFFICHAGE -->
+    <div class="settings-section">
+        <h3>Affichage</h3>
+        <label>Mode sombre</label>
+
+        <label class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <button class="save-btn">Sauvegarder les changements</button>
+</div>
+
+                       <!--boutton de navigation-->
+
+                       <!-- ========== BOUTON RETOUR EN HAUT ========== -->
+<button id="backToTop" class="back-to-top" aria-label="Retour en haut de la page">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</button>
+<script>
+// =================== BOUTON RETOUR EN HAUT (VERSION SIMPLIFIÉE) ===================
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('backToTop');
+    
+    // Fonction pour vérifier la position de défilement
+    function toggleBackToTop() {
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        
+        // Le bouton apparaît après 300px de défilement
+        if (scrollPosition > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    }
+    
+    // Fonction pour remonter en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Événements
+    window.addEventListener('scroll', toggleBackToTop);
+    backToTopButton.addEventListener('click', scrollToTop);
+    
+    // Vérifier la position au chargement
+    toggleBackToTop();
+});
+</script>
+                     <!--fin ici-->
+
+
+<script>
+                      // =================== PANEL PARAMÈTRES ===================
+
+
+const settingsBtn = document.getElementById('settingsBtn');
+const settingsPanel = document.getElementById('settingsPanel');
+const closeSettings = document.getElementById('closeSettings');
+const sections = document.querySelectorAll('.settings-section');
+
+settingsBtn.addEventListener('click', () => {
+    settingsPanel.classList.add('active');
+    settingsBtn.classList.add('active');
+    sections.forEach((sec, i) => setTimeout(() => sec.classList.add('active'), i * 150));
+});
+
+closeSettings.addEventListener('click', () => {
+    settingsPanel.classList.remove('active');
+    settingsBtn.classList.remove('active');
+    sections.forEach(sec => sec.classList.remove('active'));
+});
+
+// =================== PREVIEW PHOTO ===================
+function previewPhoto(event) {
+    const photo = document.getElementById('profilePhoto');
+    photo.src = URL.createObjectURL(event.target.files[0]);
+}
+
+// =================== DARK MODE ===================
+
+// Charger la préférence
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const toggle = document.getElementById('darkModeToggle');
+
+    // Charger la préférence sauvegardée
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode === "enabled") {
+        document.body.classList.add("dark-mode");
+        if (toggle) toggle.checked = true;
+    }
+
+    // Gestion du changement
+    if (toggle) {   
+        toggle.addEventListener("change", () => {
+            if (toggle.checked) {
+                document.body.classList.add("dark-mode");
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                document.body.classList.remove("dark-mode");
+                localStorage.setItem("darkMode", "disabled");
+            }
+        });
+    }
+
+});
+</script>
+
+                                     <!-- js pour changer la langue dans le site-->
+
+                                     <script>
+                        // =================== SYSTÈME DE TRADUCTION ===================
+const translations = {
+    'en': {
+        // Header
+        'site-title': 'KELDEN Timetable Manager',
+        'login-btn': 'Log In',
+        'settings-btn': 'Settings',
+        
+        // Main content
+        'welcome-title': 'Welcome to KELDEN Timetable Manager',
+        'welcome-text': 'View and manage your timetables in a centralized, modern, and bilingual way.',
+        'students-title': 'Students',
+        'students-desc': 'View your timetable by level, field, or teacher.',
+        'teachers-title': 'Teachers',
+        'teachers-desc': 'View your classes and receive change notifications.',
+        'view-timetable': 'View My Timetable',
+        
+        // Sections
+        'kelden-horizon': '📘 Kelden Horizon',
+        'horizon-desc': 'A modern system for organizing time, classes, exams, and administrative life.',
+        'schedule-management': 'Schedule Management',
+        'schedule-desc': 'Interactive creation, modification and viewing of schedules.',
+        'academic-tracking': 'Academic Tracking',
+        'tracking-desc': 'Modules, assignments, grades and consolidated progress.',
+        'simplified-admin': 'Simplified Administration',
+        'admin-desc': 'Registrations, documents, notifications, internal communication.',
+        
+        'connected-campuses': '🏫 Connected Campuses',
+        'yaounde': 'Yaoundé',
+        'yaounde-desc': 'Main academic center with digital rooms and laboratories.',
+        'douala': 'Douala',
+        'douala-desc': 'Innovation space, workshops, and professional support.',
+        'contact-info': '📞 +237 651 98 53 08 • 📧 keldeninstitute21@gmail.com',
+        
+        'academic-excellence': '⭐ Academic Excellence',
+        'diplomas': 'Diplomas',
+        'diplomas-desc': 'HND, Bachelor, Master, MBA delivered by industry experts.',
+        'partnerships': 'Partnerships',
+        'partnerships-desc': 'NCUK, Google for Education, African university collaborations.',
+        'performance': 'Performance',
+        'performance-desc': 'Recognized among the best professional institutions in 2025.',
+        
+        // Footer
+        'campus-planner': 'Campus Planner',
+        'time-management': 'Time Management & University Organization',
+        'plan-better': 'Plan better. Study better.',
+        'features': 'Features',
+        'features-list': ['Timetable', 'Course Tracking', 'Notifications & Reminders', 'Room Management', 'Academic Calendar', 'Teacher Access'],
+        'resources': 'Resources',
+        'resources-list': ['Help & Support', 'Student FAQ', 'Documentation', 'Campus News', 'Regulations', 'Admin Contact'],
+        'newsletter': 'Newsletter',
+        'newsletter-desc': 'Receive academic updates directly by email.',
+        'email-placeholder': 'Your Email',
+        'subscribe-success': 'Subscription successful!',
+        'subscribe-error': 'Please enter a valid email.',
+        
+        // Settings Panel
+        'close-settings': 'Close Settings',
+        'account': 'Account',
+        'username': 'Username',
+        'username-placeholder': 'Your name',
+        'email': 'Email',
+        'email-placeholder': 'email@kelden.com',
+        'password': 'Password',
+        'password-placeholder': '********',
+        'language': 'Language',
+        'select-language': 'Select language',
+        'display': 'Display',
+        'dark-mode': 'Dark Mode',
+        'save-changes': 'Save Changes'
+    },
+    'fr': {
+        // Header
+        'site-title': 'KELDEN Timetable Manager',
+        'login-btn': 'Se connecter',
+        'settings-btn': 'Paramètres',
+        
+        // Main content
+        'welcome-title': 'Bienvenue sur KELDEN Timetable Manager',
+        'welcome-text': 'Consultez et gérez vos emplois du temps de manière centralisée, moderne et bilingue.',
+        'students-title': 'Étudiants',
+        'students-desc': 'Consultez votre emploi du temps par niveau, filière ou enseignant.',
+        'teachers-title': 'Professeurs',
+        'teachers-desc': 'Visualisez vos cours et recevez les notifications des changements.',
+        'view-timetable': 'Voir Mon Emploi du Temps',
+        
+        // Sections
+        'kelden-horizon': '📘 Kelden Horizon',
+        'horizon-desc': 'Un système moderne pour organiser le temps, les cours, les examens et la vie administrative.',
+        'schedule-management': 'Gestion des Emplois du Temps',
+        'schedule-desc': 'Création, modification et visualisation interactive des horaires.',
+        'academic-tracking': 'Suivi Académique',
+        'tracking-desc': 'Modules, devoirs, notes et progression consolidée.',
+        'simplified-admin': 'Administration Simplifiée',
+        'admin-desc': 'Inscriptions, documents, notifications, communication interne.',
+        
+        'connected-campuses': '🏫 Campus Connectés',
+        'yaounde': 'Yaoundé',
+        'yaounde-desc': 'Centre académique principal avec salles numériques et laboratoires.',
+        'douala': 'Douala',
+        'douala-desc': 'Espace d\'innovation, workshops, et accompagnement professionnel.',
+        'contact-info': '📞 +237 651 98 53 08 • 📧 keldeninstitute21@gmail.com',
+        
+        'academic-excellence': '⭐ Excellence Académique',
+        'diplomas': 'Diplômes',
+        'diplomas-desc': 'HND, Licence, Master, MBA délivrés par des experts du secteur.',
+        'partnerships': 'Partenariats',
+        'partnerships-desc': 'NCUK, Google for Education, collaborations universitaires africaines.',
+        'performance': 'Performance',
+        'performance-desc': 'Reconnue parmi les meilleures institutions professionnelles en 2025.',
+        
+        // Footer
+        'campus-planner': 'Campus Planner',
+        'time-management': 'Gestion du Temps & Organisation Universitaire',
+        'plan-better': 'Planifiez mieux. Étudiez mieux.',
+        'features': 'Fonctionnalités',
+        'features-list': ['Emploi du Temps', 'Suivi des Cours', 'Notifications & Rappels', 'Gestion des Salles', 'Calendrier Académique', 'Accès Enseignants'],
+        'resources': 'Ressources',
+        'resources-list': ['Aide & Support', 'FAQ Étudiants', 'Documentation', 'Actualités du Campus', 'Règlements', 'Contact Administration'],
+        'newsletter': 'Newsletter',
+        'newsletter-desc': 'Recevez les mises à jour académiques directement par email.',
+        'email-placeholder': 'Votre Email',
+        'subscribe-success': 'Inscription réussie !',
+        'subscribe-error': 'Veuillez entrer un email valide.',
+        
+        // Settings Panel
+        'close-settings': 'Fermer Paramètres',
+        'account': 'Compte',
+        'username': 'Nom d\'utilisateur',
+        'username-placeholder': 'Votre nom',
+        'email': 'Email',
+        'email-placeholder': 'email@kelden.com',
+        'password': 'Mot de passe',
+        'password-placeholder': '********',
+        'language': 'Langue',
+        'select-language': 'Sélectionnez la langue',
+        'display': 'Affichage',
+        'dark-mode': 'Mode sombre',
+        'save-changes': 'Sauvegarder les changements'
+    }
+};
+
+// Fonction pour appliquer les traductions
+function applyTranslations(lang) {
+    const translation = translations[lang];
+    
+    // Header
+    document.querySelector('header h1').textContent = translation['site-title'];
+    document.querySelector('nav button:first-child').textContent = translation['login-btn'];
+    document.getElementById('settingsBtn').textContent = translation['settings-btn'];
+    
+    // Main content
+    document.querySelector('.welcome h2').textContent = translation['welcome-title'];
+    document.querySelector('.welcome p').textContent = translation['welcome-text'];
+    
+    // Student card
+    document.querySelector('.role-card:first-child h3').textContent = translation['students-title'];
+    document.querySelector('.role-card:first-child p').textContent = translation['students-desc'];
+    document.querySelector('.role-card:first-child button').textContent = translation['view-timetable'];
+    
+    // Teacher card
+    document.querySelector('.role-card:last-child h3').textContent = translation['teachers-title'];
+    document.querySelector('.role-card:last-child p').textContent = translation['teachers-desc'];
+    document.querySelector('.role-card:last-child button').textContent = translation['view-timetable'];
+    
+    // Kelden Horizon section
+    document.querySelector('.intro h2').textContent = translation['kelden-horizon'];
+    document.querySelector('.intro .desc').textContent = translation['horizon-desc'];
+    
+    const introCards = document.querySelectorAll('.intro .card');
+    introCards[0].querySelector('h3').textContent = translation['schedule-management'];
+    introCards[0].querySelector('p').textContent = translation['schedule-desc'];
+    introCards[1].querySelector('h3').textContent = translation['academic-tracking'];
+    introCards[1].querySelector('p').textContent = translation['tracking-desc'];
+    introCards[2].querySelector('h3').textContent = translation['simplified-admin'];
+    introCards[2].querySelector('p').textContent = translation['admin-desc'];
+    
+    // Campuses section
+    document.querySelector('.campuses h2').textContent = translation['connected-campuses'];
+    const campusCards = document.querySelectorAll('.campuses .card');
+    campusCards[0].querySelector('h3').textContent = translation['yaounde'];
+    campusCards[0].querySelector('p').textContent = translation['yaounde-desc'];
+    campusCards[1].querySelector('h3').textContent = translation['douala'];
+    campusCards[1].querySelector('p').textContent = translation['douala-desc'];
+    document.querySelector('.campuses .contact').textContent = translation['contact-info'];
+    
+    // Excellence section
+    document.querySelector('.reputation h2').textContent = translation['academic-excellence'];
+    const excellenceCards = document.querySelectorAll('.reputation .card');
+    excellenceCards[0].querySelector('h3').textContent = translation['diplomas'];
+    excellenceCards[0].querySelector('p').textContent = translation['diplomas-desc'];
+    excellenceCards[1].querySelector('h3').textContent = translation['partnerships'];
+    excellenceCards[1].querySelector('p').textContent = translation['partnerships-desc'];
+    excellenceCards[2].querySelector('h3').textContent = translation['performance'];
+    excellenceCards[2].querySelector('p').textContent = translation['performance-desc'];
+    
+    // Footer
+    document.querySelector('.footer-top h2').textContent = translation['campus-planner'];
+    document.querySelector('.footer-top p:first-of-type').textContent = translation['time-management'];
+    document.querySelector('.footer-top .tagline').textContent = translation['plan-better'];
+    
+    const footerColumns = document.querySelectorAll('.footer-column');
+    footerColumns[0].querySelector('h3').textContent = translation['features'];
+    const featuresList = footerColumns[0].querySelectorAll('li');
+    translation['features-list'].forEach((item, index) => {
+        featuresList[index].textContent = item;
+    });
+    
+    footerColumns[1].querySelector('h3').textContent = translation['resources'];
+    const resourcesList = footerColumns[1].querySelectorAll('li');
+    translation['resources-list'].forEach((item, index) => {
+        resourcesList[index].textContent = item;
+    });
+    
+    footerColumns[2].querySelector('h3').textContent = translation['newsletter'];
+    footerColumns[2].querySelector('p').textContent = translation['newsletter-desc'];
+    footerColumns[2].querySelector('input').placeholder = translation['email-placeholder'];
+    
+    // Settings Panel
+    document.getElementById('closeSettings').textContent = translation['close-settings'];
+    
+    const settingsSections = document.querySelectorAll('.settings-section');
+    settingsSections[0].querySelector('h3').textContent = translation['account'];
+    settingsSections[0].querySelector('label[for="username"]').textContent = translation['username'];
+    document.getElementById('username').placeholder = translation['username-placeholder'];
+    settingsSections[0].querySelector('label[for="email"]').textContent = translation['email'];
+    document.getElementById('email').placeholder = translation['email-placeholder'];
+    settingsSections[0].querySelector('label[for="password"]').textContent = translation['password'];
+    document.getElementById('password').placeholder = translation['password-placeholder'];
+    
+    settingsSections[1].querySelector('h3').textContent = translation['language'];
+    settingsSections[1].querySelector('label').textContent = translation['select-language'];
+    
+    settingsSections[2].querySelector('h3').textContent = translation['display'];
+    settingsSections[2].querySelector('label:not(.toggle-switch)').textContent = translation['dark-mode'];
+    
+    document.querySelector('.save-btn').textContent = translation['save-changes'];
+    
+    // Mettre à jour le sélecteur de langue
+    document.getElementById('language').value = lang;
+    
+    // Sauvegarder la préférence
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Initialiser la langue au chargement
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    applyTranslations(savedLanguage);
+    
+    // Gérer le changement de langue depuis les paramètres
+    document.getElementById('language').addEventListener('change', function() {
+        const selectedLang = this.value;
+        applyTranslations(selectedLang);
+    });
+    
+    // Mettre à jour le texte du message d'inscription
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('subscribe-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const email = this.querySelector('input').value;
+        const message = document.getElementById('subscribe-message');
+        const translation = translations[savedLang];
+        
+        if (email) {
+            message.textContent = translation['subscribe-success'];
+            this.reset();
+        } else {
+            message.textContent = translation['subscribe-error'];
+        }
+    });
+});
+</script>
+
+
+
+</body>
+</html>
+
+
+
